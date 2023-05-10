@@ -1,6 +1,8 @@
 # LinkedIn Clone Web App
 visit and have fun with <https://linkedin-clone-1cfda.web.app/>
 
+<img src="./misc/screenshot.jpg" width=500>
+
 ## Feature
 * LinkedIn-like UI style (light mode)
 * Account management (register/login/logout/authentication)
