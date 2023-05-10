@@ -37,11 +37,10 @@ function Login() {
           // dispatch action to userSlice
           dispatch(
             login({
-              testKey: "test_value",
-              //   email: userCred.user.email,
-              //   uid: userCred.user.uid,
-              //   displayName: name,
-              //   photoURL: profilePic,
+              email: userCred.user.email,
+              uid: userCred.user.uid,
+              displayName: name,
+              photoURL: profilePic,
             })
           );
         });

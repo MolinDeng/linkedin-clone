@@ -8,13 +8,14 @@ import { selectUser } from "./features/userSlice";
 import Login from "./Login";
 
 function App() {
-  const user = useSelector(selectUser);
+  // We can read data from the store
+  const account = useSelector(selectUser);
   return (
     <div className="app">
       {/* Header */}
       <Header />
       {/* if user not exits, we render Login */}
-      {!user ? (
+      {!account ? (
         <Login />
       ) : (
         <div className="app__body">
