@@ -8,7 +8,7 @@ import { selectUser } from "./features/userSlice";
 import Login from "./Login";
 
 function App() {
-  const user = 1; //useSelector(selectUser);
+  const user = useSelector(selectUser);
   return (
     <div className="app">
       {/* Header */}

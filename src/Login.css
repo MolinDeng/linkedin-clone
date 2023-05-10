@@ -26,3 +26,21 @@
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+.login > form > button {
+    width: 365px;
+    height: 50px;
+    font-size: large;
+    color: white;
+    background-color: #0074b1;
+    border-radius: 5px;
+}
+.login__register {
+    color: #0074b1;
+    cursor: pointer;
+}
+
+.login > p {
+    margin-top: 20px;
+    
+}

@@ -35,8 +35,8 @@ function Feed() {
           }))
         );
       },
-      (errors) => {
-        console.log(errors);
+      (err) => {
+        alert(err.message);
       }
     );
   }, [q]);

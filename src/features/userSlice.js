@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const userSlice = createSlice({
-  name: "user",
+  name: "user_slice",
   initialState,
   reducers: {
     login: (state, action) => {
