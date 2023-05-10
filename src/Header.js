@@ -43,6 +43,7 @@ function Header() {
         <HeaderOption Icon={SmsIcon} title={"Messaging"} />
         <HeaderOption Icon={NotificationsIcon} title={"Notifications"} />
         <HeaderOption
+          hasAvatar={true}
           avatar={account?.photoURL}
           avatarFallback={account?.displayName[0]}
           title={"me"}
