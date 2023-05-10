@@ -15,6 +15,7 @@ function Sidebar() {
       <p>{topic}</p>
     </div>
   );
+
   return (
     <div className="sidebar">
       {/* top */}

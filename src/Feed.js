@@ -15,10 +15,10 @@ import {
   serverTimestamp,
   query,
   orderBy,
-  //   limit, // limit post
 } from "firebase/firestore";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
+import FlipMove from "react-flip-move";
 
 function Feed() {
   const account = useSelector(selectUser);
@@ -86,15 +86,17 @@ function Feed() {
         </div>
       </div>
       {/* posts */}
-      {currPosts.map(({ id, data }) => (
-        <Post
-          key={id}
-          name={data.name}
-          desc={data.desc}
-          msg={data.msg}
-          photoUrl={data.photoUrl}
-        />
-      ))}
+      <FlipMove>
+        {currPosts.map(({ id, data }) => (
+          <Post
+            key={id}
+            name={data.name}
+            desc={data.desc}
+            msg={data.msg}
+            photoUrl={data.photoUrl}
+          />
+        ))}
+      </FlipMove>
     </div>
   );
 }

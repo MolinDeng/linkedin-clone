@@ -1,10 +1,10 @@
 .sidebar {
     position: sticky;
+    height: fit-content;
     top: 70px;
-    flex: 0.2;
+    flex: 0.25;
     border-radius: 10px;
     text-align: center;
-    height: fit-content;
     /* max-width: 600px; */
 }
 
