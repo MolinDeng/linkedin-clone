@@ -1,4 +1,4 @@
-# Linkedin Clone Web App
+# LinkedIn Clone Web App
 ## Feature
 * LinkedIn-like UI style (light mode)
 * Account management (register/login/logout/authentication)
