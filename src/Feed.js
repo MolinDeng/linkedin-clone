@@ -17,8 +17,12 @@ import {
   orderBy,
   //   limit, // limit post
 } from "firebase/firestore";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 
 function Feed() {
+  const account = useSelector(selectUser);
+
   const [inputState, setInput] = useState("");
   const [currPosts, setPosts] = useState([]);
   const q = query(colRef, orderBy("timestamp", "desc"));
@@ -44,10 +48,10 @@ function Feed() {
     e.preventDefault(); // prevent default behavior, which is refresh the webpage
     // addDoc will trigger onSnapshot, which updates currPosts state which updates the view
     addDoc(colRef, {
-      name: "Molin Deng",
-      desc: "test, test, test",
+      name: account.displayName,
+      desc: account.email,
       msg: inputState,
-      photoUrl: "",
+      photoUrl: account.photoURL,
       timestamp: serverTimestamp(),
     });
     setInput(""); // clear input value

@@ -7,8 +7,20 @@ import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import WorkIcon from "@mui/icons-material/Work";
 import SmsIcon from "@mui/icons-material/Sms";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./features/userSlice";
+import { auth } from "./firebase";
+import { signOut } from "firebase/auth";
 function Header() {
+  const dispatch = useDispatch();
+  const logoutApp = () => {
+    dispatch(logout);
+    signOut(auth);
+  };
+
+  const account = useSelector(selectUser);
+
   return (
     <div className="header">
       {/* Header left */}
@@ -31,8 +43,14 @@ function Header() {
         <HeaderOption Icon={SmsIcon} title={"Messaging"} />
         <HeaderOption Icon={NotificationsIcon} title={"Notifications"} />
         <HeaderOption
-          avatar="https://media.licdn.com/dms/image/D4D03AQHFVJnvv1sRZA/profile-displayphoto-shrink_800_800/0/1678786237924?e=1689206400&v=beta&t=ESLF5qceMkheV1kJAaGJK5J5LuHHDAAouzJEvC8usPw"
+          avatar={account?.photoURL}
+          avatarFallback={account?.displayName[0]}
           title={"me"}
+        />
+        <HeaderOption
+          Icon={ExitToAppIcon}
+          title={"Logout"}
+          onClick={logoutApp}
         />
       </div>
     </div>

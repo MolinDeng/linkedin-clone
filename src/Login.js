@@ -19,7 +19,16 @@ function Login() {
   const loginToApp = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCred) => {})
+      // .then((userCred) => {
+      //   dispatch(
+      //     login({
+      //       email: userCred.user.email,
+      //       uid: userCred.user.uid,
+      //       displayName: userCred.user.displayName,
+      //       photoURL: userCred.user.photoURL,
+      //     })
+      //   );
+      // })
       .catch((err) => {
         alert(err);
       });
@@ -34,7 +43,6 @@ function Login() {
           displayName: name,
           photoURL: profilePic,
         }).then(() => {
-          // dispatch action to userSlice
           dispatch(
             login({
               email: userCred.user.email,
