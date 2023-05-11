@@ -27,6 +27,12 @@
     border-radius: 5px;
 }
 
+/* .login_pw_input:invalid {
+    border: 2px solid red;
+}
+.login_email_input:invalid {
+    border: 2px solid red ;
+} */
 .login > form > button {
     width: 365px;
     height: 50px;

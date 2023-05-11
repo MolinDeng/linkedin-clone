@@ -15,9 +15,13 @@ function Login() {
   const [password, setPassword] = useState("");
   const [profilePic, setProfilePic] = useState("");
   const dispatch = useDispatch();
+  const [validEmail, setValidEmail] = useState(false);
+  const [validPW, setValidPW] = useState(false);
 
   const loginToApp = (e) => {
-    e.preventDefault();
+    // client-side validation
+    if (validEmail && validPW) e.preventDefault();
+    else return;
     signInWithEmailAndPassword(auth, email, password)
       // .then((userCred) => {
       //   dispatch(
@@ -78,16 +82,27 @@ function Login() {
           type="text"
         />
         <input
+          className="login_email_input"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           type="email"
+          required={true}
+          onInput={(e) => {
+            setValidEmail(e.target.validity.valid);
+          }}
         />
         <input
+          className="login_pw_input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           type="password"
+          required={true}
+          minLength="6"
+          onInput={(e) => {
+            setValidPW(e.target.validity.valid);
+          }}
         />
         <button type="submit" onClick={loginToApp}>
           Sign In
