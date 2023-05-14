@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { login } from "./features/userSlice";
 
 function Login() {
+  // ! can be optimized with react-hook-form
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
