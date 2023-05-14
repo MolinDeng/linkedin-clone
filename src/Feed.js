@@ -69,7 +69,8 @@ function Feed() {
               onChange={(e) => setInput(e.target.value)}
               type="text"
             />
-            {/* <button type="submit">Send</button> */}
+            {/* when there is only one input element, button/input of "submit" type can be omitted */}
+            <button type="submit">Send</button>
           </form>
         </div>
         {/* options */}
