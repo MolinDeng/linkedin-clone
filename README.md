@@ -1,4 +1,5 @@
 # LinkedIn Clone Web App
+
 This project was bootstrapped with
 
 * [React](https://react.dev/) (Redux template)
@@ -11,18 +12,20 @@ visit and have fun with <https://linkedin-clone-1cfda.web.app/>
 
 <img src="./misc/screenshot.jpg" width=500>
 
-
 ## Features
+
 * LinkedIn-like UI style (light mode)
 * Responsive layout
 * Account management (register/login/logout)
 * Sending Posts
 * A bit of animation
 
-## Getting Started 
+## Getting Started
+
 In the project directory, you can run:
 
-#### `npm init`
+#### `npm install`
+
 Installs all the dependencies.
 
 #### `npm start`
